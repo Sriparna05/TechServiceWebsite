@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Code, Database, Shield, Smartphone, BarChart3, Globe, Palette, Users } from "lucide-react";
+import { TestimonialSlider } from "./TestimonialSlider";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -42,7 +43,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
         <div className="container mx-auto px-4 py-24 md:py-32 relative">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge variant="outline" className="bg-background/10 border-primary/20 text-foreground">
+            <Badge variant="outline" className="bg-background/10 border-primary/20 dark:text-foreground text-white">
               🚀 Empowering Digital Innovation
             </Badge>
             
@@ -141,42 +142,15 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Trusted by Industry Leaders
+              Testimonials
             </h2>
             <p className="text-muted-foreground text-lg">
               What our clients say about working with Ementora
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <Card key={i} className="shadow-card">
-                <CardContent className="p-8 space-y-4">
-                  <div className="flex text-primary">
-                    {[...Array(5)].map((_, index) => (
-                      <span key={index}>★</span>
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground">
-                    "Ementora transformed our digital infrastructure completely. Their expertise in cloud solutions and security is unmatched."
-                  </p>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-semibold">
-                      {i === 1 ? "JS" : i === 2 ? "MK" : "AR"}
-                    </div>
-                    <div>
-                      <div className="font-semibold">
-                        {i === 1 ? "John Smith" : i === 2 ? "Maria Kumar" : "Alex Rivera"}
-                      </div>
-                      <div className="text-sm text-muted-foreground">
-                        {i === 1 ? "CTO, TechCorp" : i === 2 ? "CEO, DataFlow" : "Director, InnovateLabs"}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {/* Modern sleek testimonial slider */}
+          <TestimonialSlider />
         </div>
       </section>
 

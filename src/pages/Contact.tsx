@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Zap } from "lucide-react";
+import { contactInfo as sharedContactInfo } from "@/data/contactInfo";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -44,27 +45,27 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
-      title: "Email",
-      detail: "hello@ementora.com",
-      description: "Send us an email anytime"
+      title: sharedContactInfo.email.label,
+      detail: sharedContactInfo.email.value,
+      description: sharedContactInfo.email.description
     },
     {
       icon: <Phone className="h-5 w-5" />,
-      title: "Phone",
-      detail: "+1 (555) 123-4567",
-      description: "Mon-Fri from 8am to 5pm"
+      title: sharedContactInfo.phone.label,
+      detail: sharedContactInfo.phone.value,
+      description: sharedContactInfo.phone.description
     },
     {
       icon: <MapPin className="h-5 w-5" />,
-      title: "Office",
-      detail: "San Francisco, CA",
-      description: "Come say hello at our HQ"
+      title: sharedContactInfo.address.label,
+      detail: sharedContactInfo.address.value,
+      description: sharedContactInfo.address.description
     },
     {
       icon: <Clock className="h-5 w-5" />,
-      title: "Response Time",
-      detail: "< 24 hours",
-      description: "We respond quickly"
+      title: sharedContactInfo.responseTime.label,
+      detail: sharedContactInfo.responseTime.value,
+      description: sharedContactInfo.responseTime.description
     }
   ];
 
@@ -92,7 +93,7 @@ const Contact = () => {
       <section className="py-16 bg-gradient-hero">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <Badge variant="outline" className="bg-background/10 border-primary/20 text-foreground">
+            <Badge variant="outline" className="bg-background/10 border-primary/20 dark:text-foreground text-white">
               📞 Get In Touch
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white">
@@ -243,7 +244,7 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Visit Our Office</h2>
             <p className="text-muted-foreground text-lg">
-              We're located in the heart of San Francisco's tech district
+              We're located in the heart of Kolkata's tech district
             </p>
           </div>
           
@@ -253,11 +254,20 @@ const Contact = () => {
                 <MapPin className="h-12 w-12 mx-auto" />
                 <div>
                   <h3 className="text-xl font-semibold">Ementora HQ</h3>
-                  <p className="text-white/80">123 Innovation Drive</p>
-                  <p className="text-white/80">San Francisco, CA 94105</p>
+                  <p className="text-white/80">{sharedContactInfo.address.value}</p>
                 </div>
-                <Button variant="outline" className="border-white text-white hover:bg-white/10">
-                  Get Directions
+                <Button
+                  asChild
+                  variant="secondary"
+                  className="border-white text-violet-700 dark:text-white hover:text-violet-200 hover:bg-white/10"
+                >
+                  <a
+                    href="https://maps.app.goo.gl/d4UtHUDJgUxpL1wy5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get Directions
+                  </a>
                 </Button>
               </div>
             </div>

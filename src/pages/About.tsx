@@ -67,29 +67,11 @@ const About = () => {
 
   const team = [
     {
-      name: "Sarah Johnson",
+      name: "Sudip Das",
       role: "CEO & Founder",
       quote: "Technology should empower businesses, not complicate them. We make it simple.",
-      initials: "SJ"
+      initials: "SD"
     },
-    {
-      name: "Michael Chen",
-      role: "CTO",
-      quote: "Innovation happens at the intersection of creativity and technical excellence.",
-      initials: "MC"
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "VP of Engineering",
-      quote: "Great software is built by great teams who care about every detail.",
-      initials: "ER"
-    },
-    {
-      name: "David Kim",
-      role: "Head of Security",
-      quote: "Security isn't just a feature; it's the foundation of trust in the digital age.",
-      initials: "DK"
-    }
   ];
 
   return (
@@ -98,7 +80,7 @@ const About = () => {
       <section className="py-16 bg-gradient-hero">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <Badge variant="outline" className="bg-background/10 border-primary/20 text-foreground">
+            <Badge variant="outline" className="bg-background/10 border-primary/20 dark:text-foreground text-white">
               👥 Our Story
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white">
@@ -227,9 +209,9 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="text-center group hover-glow">
+              <Card key={index} className="text-center group hover-glow w-full max-w-xs">
                 <CardContent className="p-8 space-y-4">
                   <div className="mx-auto w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                     {member.initials}

@@ -80,7 +80,7 @@ const Services = () => {
       <section className="py-16 bg-gradient-hero">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <Badge variant="outline" className="bg-background/10 border-primary/20 text-foreground">
+            <Badge variant="outline" className="bg-background/10 border-primary/20 dark:text-foreground text-white">
               🔧 Comprehensive Solutions
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white">

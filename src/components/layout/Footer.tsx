@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import { contactInfo as sharedContactInfo } from "@/data/contactInfo";
 
 const Footer = () => {
   return (
@@ -76,22 +77,22 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li className="flex items-center space-x-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>hello@ementora.com</span>
+                <span>{sharedContactInfo.email.value}</span>
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>{sharedContactInfo.phone.value}</span>
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground">
                 <MapPin className="h-4 w-4" />
-                <span>San Francisco, CA</span>
+                <span>{sharedContactInfo.address.value}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 Ementora. All rights reserved. Built with innovation and precision.</p>
+          <p>&copy; 2025 Ementora. All rights reserved. Built with innovation and precision.</p>
         </div>
       </div>
     </footer>
